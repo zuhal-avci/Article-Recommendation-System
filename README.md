@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,4 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Article-Recommendation-System
 An article recommendation system based on your reading history 
->>>>>>> c0dff9574f7bf53d5285448d66908781b07bf9a4
+ c0dff9574f7bf53d5285448d66908781b07bf9a4
