@@ -1,0 +1,141 @@
+.profile-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.profile-card {
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03);
+  margin-bottom: 30px;
+}
+
+/* Oval inputlar */
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 12px 0px;
+  margin-top: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 25px;
+  /* oval */
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="password"]:focus {
+  border-color: black;
+  /* koyu gri */
+}
+
+.reset-button {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background-color: green;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.reset-button:hover {
+  background-color: white;
+  /* Beyaz arka plan */
+  color: black;
+  /* Siyah yazı */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button:hover:not(:disabled) {
+  background-color: white;
+  /* Beyaz arka plan */
+  color: black;
+  /* Siyah yazı */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Modal kapatma butonu */
+.modal-close {
+  background-color: #d9534f;
+  /* kırmızı kapatma butonu */
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.modal-close:hover {
+  background-color: #b02a37;
+}
+
+/* Tek buton container */
+.single-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Okunan Makaleler butonu koyu gri ve modern */
+.modern-button {
+  background-color: rgb(36, 33, 33);
+  /* koyu gri */
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 35px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.04em;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modern-button:hover {
+  background-color: black;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px);
+}

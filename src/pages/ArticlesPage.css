@@ -1,0 +1,516 @@
+/* ArticlesPage.css */
+
+/* Sayfa arka planı beyaz olacak */
+body {
+    background-color: #f2f4f7;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Sayfanın genel düzeni */
+.articles-page {
+    padding: 30px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f4f7;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Başlık ve içeriğin üst kısmı */
+.page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    position: relative;
+    top: 20px;
+    margin-bottom: 0;
+}
+
+/* Kullanıcıyı selamlayan yazı */
+.welcome-text {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Arama kısmı */
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    width: 100%;
+    background-color: #f2f4f7;
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.search-input {
+    width: 60%;
+    max-width: 500px;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-button {
+    background-color: #4CAF50;
+    color: black;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    height: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-button:hover {
+    background-color: #FFFFFF;
+}
+
+/* Butonlar */
+.articles-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -50px;
+    align-items: flex-start;
+    width: 280px;
+    /* 300px'den küçültüldü */
+}
+
+.article-button {
+    background-color: #FFFFFF;
+    color: black;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+}
+
+.article-button:hover {
+    background-color: #FFFFFF;
+}
+
+/* YENİ EKLENEN LAYOUT DÜZENİ */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+/* Arama öncesi layout */
+.content-wrapper.pre-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.pre-search .left-box {
+    width: 30%;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+
+.pre-search .center-box {
+    width: 40%;
+    transition: all 0.5s ease;
+}
+
+.pre-search .right-box {
+    width: 30%;
+    margin-left: 20px;
+    transition: all 0.5s ease;
+}
+
+/* Arama sonrası layout */
+.content-wrapper.post-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-search .left-box {
+    width: 25%;
+    transform: translateX(-10%);
+    margin-right: 20px;
+}
+
+.post-search .center-box {
+    display: none;
+}
+
+.post-search .right-box {
+    width: 25%;
+    transform: translateX(10%);
+    margin-left: 20px;
+}
+
+.post-search .article-list-container {
+    width: calc(100% - 280px * 2 - 80px);
+    /* iki kutu + boşluk kadar genişlik düş */
+    margin: 0 auto;
+}
+
+/* Sidebar genişliği */
+.sidebar {
+    position: sticky;
+    top: 20px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 10;
+    margin-top: 0px;
+    align-self: flex-start;
+}
+
+/* Önerilen ve Gündem kutuları */
+.suggestion-box,
+.news-box {
+    background-color: white;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-height: 500px;
+    overflow-y: auto;
+    width: 280px;
+    /* küçültüldü */
+    transition: all 0.5s ease;
+}
+
+/* Kişiye özel makale kutucuğu */
+.personalized-box {
+    background-color: white;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-height: 1000px;
+    overflow-y: auto;
+    width: 280px;
+    /* küçültüldü */
+    align-self: flex-start;
+    transition: all 0.5s ease;
+}
+
+/* post-search görünümünde kutular daha da küçülsün */
+.post-search .news-box,
+.post-search .personalized-box {
+    width: 240px;
+}
+
+/* Kişiye özel makale listesi */
+.personalized-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.personalized-box li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+/* Yenileme butonu */
+.refresh-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.refresh-button:hover {
+    background-color: #45a049;
+}
+
+/* Makale listesi */
+.article-list {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px 30px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    max-height: 500px;
+}
+
+.article-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.article-list li {
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation-fill-mode: forwards;
+    color: black;
+}
+
+.article-list a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.article-list a:visited {
+    color: black !important;
+}
+
+.article-list a:hover {
+    color: #4CAF50 !important;
+    /* Hover’da yeşile dönebilir istersen */
+    text-decoration: none !important;
+}
+
+/* Animasyonlar */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        color: black;
+    }
+}
+
+.article-list li:nth-child(1) {
+    animation: slideIn 0.5s ease forwards 0.1s;
+}
+
+.article-list li:nth-child(2) {
+    animation: slideIn 0.5s ease forwards 0.3s;
+}
+
+.article-list li:nth-child(3) {
+    animation: slideIn 0.5s ease forwards 0.5s;
+}
+
+.article-list li:nth-child(4) {
+    animation: slideIn 0.5s ease forwards 0.7s;
+}
+
+.article-list li:nth-child(5) {
+    animation: slideIn 0.5s ease forwards 0.9s;
+}
+
+.article-list li:nth-child(6) {
+    animation: slideIn 0.5s ease forwards 1.1s;
+}
+
+.article-list li:nth-child(7) {
+    animation: slideIn 0.5s ease forwards 1.3s;
+}
+
+.article-list li:nth-child(8) {
+    animation: slideIn 0.5s ease forwards 1.5s;
+}
+
+.article-list li:nth-child(9) {
+    animation: slideIn 0.5s ease forwards 1.7s;
+}
+
+.article-list li:nth-child(10) {
+    animation: slideIn 0.5s ease forwards 1.9s;
+}
+
+/* Linklerin genel renk ayarları */
+.suggestion-box,
+.news-box,
+.personalized-box {
+    width: 260px;
+    min-height: 350px;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    overflow-y: auto;
+    margin: 0 auto;
+    /* Ortalamak için */
+}
+
+.suggestion-box a,
+.news-box a,
+.personalized-box a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.suggestion-box a:hover,
+.news-box a:hover,
+.personalized-box a:hover {
+    text-decoration: none !important;
+    color: black !important;
+    font-weight: normal;
+}
+
+
+/* Orta içerik (arama sonuçları) */
+.center-content {
+    flex: 1;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+/* Animasyonlar */
+@keyframes slideLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-20%);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(20%);
+    }
+}
+
+.slide-left {
+    animation: slideLeft 0.5s ease forwards;
+}
+
+.slide-right {
+    animation: slideRight 0.5s ease forwards;
+}
+
+.expand-center {
+    animation: expand 0.5s ease forwards;
+}
+
+@keyframes expand {
+    from {
+        width: 40%;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+/* Önerilen Makaleler Scrollbar */
+.suggestion-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.suggestion-box::-webkit-scrollbar-track {
+    background: #f2f4f7;
+    /* sayfa arka planına uyumlu açık ton */
+    border-radius: 10px;
+}
+
+.suggestion-box::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    /* açık kırık beyaz ton */
+    border-radius: 10px;
+}
+
+.suggestion-box::-webkit-scrollbar-thumb:hover {
+    background-color: #c0c0c0;
+    /* biraz daha koyu hover */
+}
+
+/* Gündem Kutusu Scrollbar */
+.news-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-box::-webkit-scrollbar-track {
+    background: #f2f4f7;
+    border-radius: 10px;
+}
+
+.news-box::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.news-box::-webkit-scrollbar-thumb:hover {
+    background-color: #c0c0c0;
+}
+
+.center-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.center-box-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.refresh-icon {
+    cursor: pointer;
+    color: #888;
+    font-size: 1.4rem;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.refresh-icon:hover {
+    color: #080808;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.refresh-button.spin {
+    animation: spin 1s linear infinite;
+}

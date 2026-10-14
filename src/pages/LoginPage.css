@@ -1,0 +1,197 @@
+/* src/pages/LoginPage.css */
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Sayfa arka plan rengi veya gradyanı */
+    background: linear-gradient(#f2f4f7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative; /* İçindeki mutlak konumlandırılmış elemanlar için referans */
+    overflow: hidden; /* Animasyon öğelerinin dışarı taşmasını engeller */
+}
+
+/* Giriş kutusu için stiller */
+.form-container {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    animation: fadeIn 0.6s ease-out; /* Giriş animasyonu */
+    transform-style: preserve-3d;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    z-index: 1; /* Formun animasyonun önünde görünmesini sağlar */
+}
+
+/* Formun aşağıdan yavaşça gelme animasyonu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input grupları için stiller (eğer kullanılıyorsa) */
+.input-group {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Input alanları için stiller */
+.form-container input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid #e0e6ed;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+    outline: none;
+    box-sizing: border-box; /* Padding'in genişliği etkilememesi için */
+}
+
+/* Input'a odaklanıldığında stil */
+.form-container input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+    background-color: white;
+}
+
+/* Buton grubu için stiller */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Giriş butonu stilleri */
+.login-btn {
+    width: 40%; /* Daha kısa */
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Kayıt ol butonu stilleri (Bu sayfada da yeşil) */
+.signup-btn {
+    width: 60%; /* Daha uzun */
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Butonların hover ve active durumları */
+.signup-btn:hover,
+.login-btn:hover {
+    background-color: #3d8b40;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.signup-btn:active,
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* Başlık stilleri */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    position: relative;
+    top: 0px;
+    margin-bottom: 0;
+    z-index: 1; /* Başlığın animasyonun önünde olmasını sağlar */
+}
+
+/* --- KOD AKIŞI ANİMASYONU STILLERİ --- */
+
+/* Kod yağmuru konteynerı için stiller */
+.code-rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
+    z-index: 0; /* Formun arkasında görünmesini sağlar */
+    pointer-events: none; /* Animasyon öğelerinin tıklanmasını engeller */
+    /* Sayfa arka planına uyumlu gradyan */
+    background: linear-gradient(to bottom, #f2f4f7, #e0f2f1);
+}
+
+/* Her bir düşen karakter için stil */
+.code-rain-char {
+    position: absolute; /* Kendi akış div'i içinde mutlak konumlandırma */
+    white-space: pre; /* Boşlukları ve satır sonlarını korur (dikey hizalama için kritik) */
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem); /* Küçük, duyarlı font boyutu */
+    font-family: 'monospace', 'Courier New', monospace; /* Kod benzeri bir font */
+    font-weight: bold; /* Karakterleri daha belirgin yapar */
+    color: rgba(76, 175, 80, 0.7); /* Matrix yeşili tonu, hafif şeffaf */
+    opacity: 0; /* Başlangıçta görünmez */
+    /* animation özelliği JavaScript tarafından ayarlanır (ana div'e uygulanır) */
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.2); /* Hafif parlak bir gölge */
+    line-height: 1em; /* Karakterler arası dikey boşluğu azaltır */
+    user-select: none; /* Metin seçilebilirliğini engeller */
+}
+
+/* Karakterlerin düşüş animasyonu (ana akış div'ine uygulanır) */
+@keyframes codeRainFlow {
+    0% {
+        transform: translateY(-10%); /* Ekranın biraz yukarısından başla */
+        opacity: 0; /* Başlangıçta tam şeffaf */
+    }
+    10% {
+        opacity: 1; /* Hızla görünür ol */
+    }
+    90% {
+        opacity: 1; /* Görünür kal */
+    }
+    100% {
+        transform: translateY(110%); /* Ekranın altından kaybol */
+        opacity: 0; /* Tamamen şeffaf ol */
+    }
+}
+
+/* Hata mesajı stilleri */
+.error-message {
+    color: #dc3545; /* Kırmızı renk */
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

@@ -1,0 +1,138 @@
+/* src/components/ReadArticlesPage.css */
+
+.read-articles-container {
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.read-articles-title {
+    font-size: 2.5em;
+    color: #0056b3;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.back-to-profile-button {
+    background-color: #6c757d; /* Gri tonu */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-profile-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.loading-message,
+.error-message,
+.no-articles-message {
+    font-size: 1.1em;
+    color: #777;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.read-articles-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.read-article-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.read-article-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.article-item-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.article-item-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.article-item-title a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.article-item-details {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.article-item-details span {
+    background-color: #e0f2f7;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #007bff;
+}
+
+.article-item-details .read-count {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.article-item-details .last-read {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.article-item-details .rating {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.article-item-abstract {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}

@@ -1,0 +1,102 @@
+/* Genel sayfa stili */
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Arama kutusu ve buton */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #45a049;
+}
+
+/* Makale listesi */
+.articles-list {
+  margin-top: 30px;
+}
+
+/* Tek bir makale kartı */
+.article {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.article:hover {
+  transform: scale(1.01);
+}
+
+/* Başlık ve özet */
+.article h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #34495e;
+}
+
+.article p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Makale linki */
+.article a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+}
+
+.article a:hover {
+  text-decoration: underline;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input {
+    width: 90%;
+  }
+
+  .search-box button {
+    width: 50%;
+  }
+}
